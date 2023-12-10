@@ -1,0 +1,40 @@
+#!/bin/sh
+
+
+
+riverctl map normal Super Return spawn foot
+
+
+riverctl map normal Super+Shift E exit
+
+
+riverctl map normal Super Q close 
+
+riverctl map normal Super B firefox-wayland
+
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+
+
+for i in $(seq 1 9)
+do
+	tags=$((1 << ($i -1)))
+
+	riverctl map normal Super $i set-focused-tags $tags
+
+	riverctl map normal Super+Control $i toggle-focused-tags $tags
+
+	riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+
+done
+
+riverctl declare-mode passthrough
+
+riverctl map passthrough Super F11 enter-mode normal
+
+riverctl default-layout rivertile
+rivertile -view-padding 6 -outer-padding 6 &
+

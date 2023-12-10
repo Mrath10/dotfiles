@@ -1,0 +1,51 @@
+{
+  "layer": "top",
+  "output": ["eDP-1"],
+  "position": "top",
+  
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["custom/music","network","battery"],
+  
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+         
+        "default": "󰝦",
+	"active": "󰝥"
+
+	},
+	"sort-by-number": true
+  },
+
+  "clock": {
+    "format": "{:%a %d/%m %H:%M}",
+    "interval": 60
+  },
+
+  "custom/music": {
+    "tooltip": false,
+    "format": "{}",
+    "interval": "once",
+    "signal": 1
+  },
+
+  "network": {
+    "interface": "wlo1",
+    "format-icons": ["󰤟","󰤢","󰤥","󰤨"],
+    "format": "Disconnected 󰤭", 
+    "format-wifi": "{essid}  {icon}",
+    "format-disconnected": "Disconnected 󰤭",
+
+    "tooltip": false,
+    "max-length": 50
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}",
+    "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    "tooltip": false
+  }
+}

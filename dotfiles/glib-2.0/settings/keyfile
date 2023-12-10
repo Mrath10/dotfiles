@@ -1,0 +1,21 @@
+[org/gnome/nm-applet/eap/95ceb57e-001a-4a2b-a135-df4b418c67c1]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/ed66c478-bbe0-4c39-a83c-955996994274]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gtk/settings/file-chooser]
+window-position=(0, 0)
+window-size=(1124, 822)
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=156
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
