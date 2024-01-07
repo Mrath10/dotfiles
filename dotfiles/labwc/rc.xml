@@ -14,7 +14,7 @@
   <theme>
     <name></name>
     <cornerRadius>8</cornerRadius>
-    <font name="sans" size="10" />
+    <font name="0xProto" size="10" />
   </theme>
 
   <desktops>
@@ -75,6 +75,30 @@
    
    <keybind key="W-S-4">
       <action name="SendToDesktop" to="4" />
+   </keybind>
+
+   <keybind key="W-Space">
+      <action name="ShowMenu" menu="client-menu" />
+   </keybind>
+
+   <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 5%-" />
+   </keybind>
+
+   <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 5%+" />
+   </keybind>
+
+   <keybind key="XF86_AudioMute">
+      <action name="Execute" command="amixer sset Master toggle" />
+   </keybind>
+
+   <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +10%" />
+   </keybind>
+
+   <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 10%-" />
    </keybind>
 
   </keyboard>
