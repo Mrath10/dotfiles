@@ -1,0 +1,110 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "top",
+
+    "position": "top",
+
+    "height": 29,
+
+    "modules-left": [
+    	"custom/launcher",
+	"wlr/taskbar"
+    ],
+    
+    "modules-center":[
+	"clock#date",
+    ],
+
+    "modules-right": [
+	"network",
+	"pulseaudio",
+        "battery",
+    ],
+
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+    "wlr/taskbar": {
+        "format": "{app_id}",
+        "on-click": "minimize-raise",
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        // Connected to AC
+        "format": "󰂅:{capacity}%", // Icon: bolt
+        // Not connected to AC
+        "format-discharging": "󰁹:{capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true
+    },
+
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "󰕾:{volume}%",
+        "format-bluetooth": "󰕾:{volume}%",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "temperature": {
+      "critical-threshold": 80,
+      "interval": 5,
+      "format": "Temp: {temperatureC}°C",
+      "tooltip": true
+    },
+
+     "custom/launcher": {
+        "format":"⌘",
+        "on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
+        "tooltip": false,
+	},
+
+    "tray": {
+        "icon-size": 19,
+        "spacing": 9
+    },
+
+    "clock#date": {
+	"format": "󰅐 {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "󰸗 {:%a %d %b}"
+    },
+
+    "network": {
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󰀂",
+        "format-disconnected" : "󰖪",
+	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+	"tooltip-format-disconnected": "Disconnected",
+	"interval": 10,
+	"nospacing": 1,
+    },
+
+}
